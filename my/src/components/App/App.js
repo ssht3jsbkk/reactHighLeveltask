@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import List from './List';
+import List from '../List';
+
 
 class App extends Component {
   constructor(props)  {
@@ -22,13 +23,34 @@ class App extends Component {
 
   }
 
+  onComplete = (i) =>  {
+
+    this.setState(
+      prevState => ({
+
+        items: [
+
+          ...prevState.items.slice(0,i),
+          {
+            todo: prevState.items[i].todo,
+            complete: !prevState.items[i].complete
+          },
+
+          ...prevState.items.slice(i+1)
+
+        ]
+
+      }));
+
+  }
+
   onSubmit = (event) =>  {
 
     event.preventDefault();
     this.setState({
 
       term:'',
-      items: [...this.state.items, this.state.term]
+      items: [...this.state.items, {todo: this.state.term, complete: false}]
 
     });
 
@@ -37,14 +59,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <form onSubmit = {this.onSubmit}>
+        <form className= "App" onSubmit = {this.onSubmit}>
         <input value = {this.state.term} onChange={this.onChange}/>
         <button>Add Item to To-Do List</button>
-        <List items={this.state.items}/>
+        <p>Hello!</p>
       </form>
+      <List items={this.state.items} onComplete={this.onComplete}/>
       </div>
     );
   }
 }
+
 
 export default App;
