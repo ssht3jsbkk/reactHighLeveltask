@@ -4,3 +4,6 @@ items in list - list of 'todo' strings
 submit button for input field in form
 
 app compoenent has constructor which sets states as an object and converts into a list of strings
+
+
+input field needs value = term and onchange function = this.onChange
