@@ -30,7 +30,7 @@ class App extends Component {
     maxDate.setHours(0, 0, 0, 0);
     this.state = {
       term:"",
-      items:[],
+      // items:[],
       minDate: minDate,
       maxDate: maxDate,
       autoOk: false,

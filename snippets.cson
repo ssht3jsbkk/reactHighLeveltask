@@ -1,0 +1,167 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.source.js':
+  'Mkexpress':
+    prefix: 'mkser'
+    body: """
+      const express = require(`express`);
+      const app = express();
+      const PORT = 3000;
+
+    app.get(`/`, function (req, res) {
+        res.send(`hello world`);
+      })
+
+
+    app.listen(PORT, function(){
+        console.log(`I'm listening on ${PORT}`);
+      })
+      """
+
+'.source.js':
+  'Hello World':
+    prefix: 'hw'
+    body: 'Hello World!'
+
+# ES6
+  "import":
+    prefix: "imp"
+    body: "import ${1} from ${2};"
+
+# Material-ui
+  "Material-ui: import":
+    prefix: "mui"
+    body: "import ${1} from 'material-ui';"
+
+# React Snippets
+  "React: componentDidMount() { ... } (ES6)":
+    prefix: "cdm6"
+    body: "componentDidMount() {\n\t${1}\n}"
+
+  "React: componentDidUpdate(pp, ps) { ... } (ES6)":
+    prefix: "cdup6"
+    body: "componentDidUpdate(prevProps, prevState) {\n\t${1}\n}"
+
+  "React: componentWillMount() { ... } (ES6)":
+    prefix: "cwm6"
+    body: "componentWillMount() {\n\t${1}\n}"
+
+  "React: componentWillReceiveProps(np) { ... } (ES6)":
+    prefix: "cwr6"
+    body: "componentWillReceiveProps(nextProps) {\n\t${1}\n}"
+
+  "React: componentWillUnmount() { ... } (ES6)":
+    prefix: "cwun6"
+    body: "componentWillUnmount() {\n\t${1}\n}"
+
+  "React: componentWillUpdate(np, ns) { ... } (ES6)":
+    prefix: "cwu6"
+    body: "componentWillUpdate(nextProps, nextState) {\n\t${1}\n}"
+
+  "React: static defaultProps = { ... }":
+    prefix: "dp"
+    body: "static defaultProps = {\n\t${1}\n};"
+
+  "React: this.state = { ... }":
+    prefix: "is"
+    body: "this.state = {\n\t${1}: ${2}\n}"
+
+  "React: static propTypes = { ... } (ES6)":
+    prefix: "pt6"
+    body: "static propTypes = {\n\t${1}: React.PropTypes.${2:string}\n};"
+
+  "React: class skeleton":
+    prefix: "rcc"
+    body: "import React, {Component} from 'react';\nimport PropTypes from 'prop-types';\n\nclass $1 extends Component {\n\trender () {\n\t\n\t}\n}\n\nexport default ${1};"
+
+  "React: define prop types":
+    prefix: "ppts"
+    body: "$1.propTypes = {\n\n};\n\n$1.defaultProps = {\n\n};"
+
+  "React: stateless component (ES6)":
+    prefix: "rcs"
+    body: "import React from \'react\'\n\nconst $1 = (${2:props}) => {\n\treturn (\n\t\t${3:<div />}\n\t)\n}\n\nexport default ${1}\n"
+
+  "React: render() { return ... } (ES6)":
+    prefix: "ren"
+    body: "render() {\n\treturn (\n\t\t${1:<div />}\n\t);\n}"
+
+  "React: setState({ ... }) (ES6)":
+    prefix: "sst"
+    body: "this.setState({\n\t${1}: ${2}\n});"
+
+  "React: shouldComponentUpdate(np, ns) { ... } (ES6)":
+    prefix: "scu"
+    body: "shouldComponentUpdate(nextProps, nextState) {\n\t${1}\n}"
+
+  "React: const { ... } = this.props; (ES6)":
+    prefix: "propsd"
+    body: "const {\n\t${1}\n} = this.props;"
+
+  "React: const { ... } = this.state; (ES6)":
+    prefix: "stated"
+    body: "const {\n\t${1}\n} = this.state;"
+
+  "PropTypes.func.isRequired":
+    prefix: "ptf"
+    body: "PropTypes.func.isRequired"
+
+  "PropTypes.string.isRequired":
+    prefix: "pts"
+    body: "PropTypes.string.isRequired"
+
+  "PropTypes.object.isRequired":
+    prefix: "pto"
+    body: "PropTypes.object.isRequired"
+
+  "PropTypes.array.isRequired":
+    prefix: "pta"
+    body: "PropTypes.array.isRequired"
+
+  "PropTypes.bool.isRequired":
+    prefix: "ptb"
+    body: "PropTypes.bool.isRequired"
+
+  "PropTypes.number.isRequired":
+    prefix: "ptn"
+    body: "PropTypes.number.isRequired"
+
+  "PropTypes.node.isRequired":
+    prefix: "ptnode"
+    body: "PropTypes.node.isRequired"
+
+  "PropTypes.element.isRequired":
+    prefix: "pte"
+    body: "PropTypes.element.isRequired"
+
+  "PropTypes.any.isRequired":
+    prefix: "ptany"
+    body: "PropTypes.any.isRequired"
+
+  "PropTypes.shape({...}).isRequired":
+    prefix: "ptshape"
+    body: "PropTypes.shape({ $1: $2 }).isRequired"
+
+  "Bind the functions":
+    prefix: "bindit"
+    body: "this.$1 = this.$1.bind(this);"
